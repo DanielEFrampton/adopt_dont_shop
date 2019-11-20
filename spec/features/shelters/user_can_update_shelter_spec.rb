@@ -24,6 +24,8 @@ RSpec.describe "shelter update process", type: :feature do
   end
 
   it "can see form to edit shelter's data" do
+    visit '/shelters/1/edit'
+    
     expect(page).to have_selector('form')
     expect(page).to have_field('shelter[name]')
     expect(page).to have_field('shelter[address]')
