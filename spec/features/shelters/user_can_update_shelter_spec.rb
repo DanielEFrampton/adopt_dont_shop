@@ -23,8 +23,14 @@ RSpec.describe "shelter update process", type: :feature do
     expect(current_path).to eq('/shelters/1/edit')
   end
 
-  # it "can see form to edit shelter's data" do
-  # end
+  it "can see form to edit shelter's data" do
+    expect(page).to have_selector('form')
+    expect(page).to have_field('shelter[name]')
+    expect(page).to have_field('shelter[address]')
+    expect(page).to have_field('shelter[city]')
+    expect(page).to have_field('shelter[state]')
+    expect(page).to have_field('shelter[zip]')
+  end
   #
   # it "can send patch request, update shelter, and redirect to shelters index with updated info" do
   # end
