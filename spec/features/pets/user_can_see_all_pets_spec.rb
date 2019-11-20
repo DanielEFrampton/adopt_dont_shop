@@ -41,9 +41,9 @@ RSpec.describe "pets index page", type: :feature do
   end
 
   it "displays all pet approximate ages" do
-    expect(page).to have_content("Approximate Age: #{@pet_1.age}")
-    expect(page).to have_content("Approximate Age: #{@pet_2.age}")
-    expect(page).to have_content("Approximate Age: #{@pet_3.age}")
+    expect(page).to have_content("Approximate Age: #{@pet_1.approx_age}")
+    expect(page).to have_content("Approximate Age: #{@pet_2.approx_age}")
+    expect(page).to have_content("Approximate Age: #{@pet_3.approx_age}")
   end
 
   it "displays sex of all pets" do
@@ -53,8 +53,8 @@ RSpec.describe "pets index page", type: :feature do
   end
 
   it "displays all pet images" do
-    expect(page).to have_selector("img", text: "#{@pet_1.image_path}")
-    expect(page).to have_selector("img", text: "#{@pet_2.image_path}")
-    expect(page).to have_selector("img", text: "#{@pet_3.image_path}")
+    expect(page).to have_xpath("//img[@src='#{@pet_1.image_path}']")
+    expect(page).to have_xpath("//img[@src='#{@pet_2.image_path}']")
+    expect(page).to have_xpath("//img[@src='#{@pet_3.image_path}']")
   end
 end
