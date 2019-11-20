@@ -1,7 +1,15 @@
 <h1>Shelter Info</h1>
 
+<p>
 Name: <%= @shelter.name %><br/>
 Address: <%= @shelter.address %><br/>
 City: <%= @shelter.city %><br/>
 State: <%= @shelter.state %><br/>
 Zip: <%= @shelter.zip %><br/>
+</p>
+
+<p>
+<a href="/shelters/<%= @shelter.id %>/edit">Edit Shelter</a><br/>
+<a href="/shelters">Return to Shelter Index</a>
+
+</p>
