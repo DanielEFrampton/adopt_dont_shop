@@ -57,4 +57,9 @@ RSpec.describe "pets index page", type: :feature do
     expect(page).to have_xpath("//img[@src='#{@pet_2.image_path}']")
     expect(page).to have_xpath("//img[@src='#{@pet_3.image_path}']")
   end
+
+  it "displays name of shelter where pet is located" do
+    expect(page).to have_content(@shelter_1.name)
+    expect(page).to have_content(@shelter_2.name, count: 2)
+  end
 end
