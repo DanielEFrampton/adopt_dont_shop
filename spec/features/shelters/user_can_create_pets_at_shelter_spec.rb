@@ -40,7 +40,8 @@ RSpec.describe "shelter pet creation process", type: :feature do
 
     expect(current_path).to eq("/shelters/#{@shelter_1.id}/pets")
     expect(page).to have_content("Phil")
-    expect(page).to have_content("Very cute")
+    expect(page).to have_content("Approximate Age: 1")
+    expect(page).to have_content("Sex: male")
     expect(page).to have_xpath("//img[@alt='image4.png']")
   end
 end
