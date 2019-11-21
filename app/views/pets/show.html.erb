@@ -1,0 +1,15 @@
+<h1>Pet Info</h1>
+
+<h3><%= @pet.name %></h3>
+<p>
+  Adoptable: <%= @pet.adoptable %><br/>
+  Description: <%= @pet.description %><br/>
+  Approximate Age: <%= @pet.approx_age %><br/>
+  Sex: <%= @pet.sex %><br/>
+  <%= image_tag "#{@pet.image_path}", alt: "#{@pet.image_path}" %>
+</p>
+
+<p>
+  <a href="/shelters/<%= @pet.shelter.id %>">This Pet's Shelter</a>
+  <a href="/pets">All Pets Index</a><br/>
+</p>
