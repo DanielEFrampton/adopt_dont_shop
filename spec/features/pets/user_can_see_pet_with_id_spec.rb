@@ -23,7 +23,7 @@ RSpec.describe "pet show page", type: :feature do
   end
 
   it "can display pet image" do
-    expect(page).to have_xpath("//img[@src='#{@pet_1.image_path}']")
+    expect(page).to have_xpath("//img[@alt='#{@pet_1.image_path}']")
   end
 
   it "can display pet description" do

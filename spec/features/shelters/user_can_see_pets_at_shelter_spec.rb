@@ -51,11 +51,11 @@ RSpec.describe "shelter pets index", type: :feature do
 
   it "can display pet images" do
     visit "/shelters/#{@shelter_1.id}/pets"
-    expect(page).to have_xpath("//img[@src='#{@pet_1.image_path}']")
+    expect(page).to have_xpath("//img[@alt='#{@pet_1.image_path}']")
 
     visit "/shelters/#{@shelter_2.id}/pets"
-    expect(page).to have_xpath("//img[@src='#{@pet_2.image_path}']")
-    expect(page).to have_xpath("//img[@src='#{@pet_3.image_path}']")
+    expect(page).to have_xpath("//img[@alt='#{@pet_2.image_path}']")
+    expect(page).to have_xpath("//img[@alt='#{@pet_3.image_path}']")
   end
 
   it "can display pets' approximate ages" do
