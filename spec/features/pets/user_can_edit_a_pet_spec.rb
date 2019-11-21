@@ -35,7 +35,7 @@ RSpec.describe 'In the Pet edit process', type: :feature do
   describe 'the Pet Edit page' do
     it 'has a form to edit pet data' do
       visit "/pets/#{@pet_1.id}/edit"
-      
+
       expect(page).to have_selector('form')
       expect(page).to have_field('Name')
       expect(page).to have_field('Sex')
@@ -44,7 +44,22 @@ RSpec.describe 'In the Pet edit process', type: :feature do
       expect(page).to have_field('Image Path')
     end
 
-    xit 'has submit button which when clicked sends PATCH request, updates pet, redirects to Pet Show page with updated data' do
+    it 'has submit button which when clicked sends PATCH request, updates pet, redirects to Pet Show page with updated data' do
+      fill_in 'name', with: 'Philippa'
+      fill_in 'approx_age', with: 67
+      fill_in 'sex', with: 'female'
+      fill_in 'description', with: "Somewhat cute"
+      fill_in 'image_path', with: "image5.png"
+
+      click_button 'Submit'
+
+      expect(current_path).to eq("/pets/#{@pet_1.id}")
+      expect(page).to have_content("Philippa")
+      expect(page).to have_content("Adoptable: true")
+      expect(page).to have_content("Approximate Age: 67")
+      expect(page).to have_content("Sex: female")
+      expect(page).to have_content("Description: Somewhat cute")
+      expect(page).to have_xpath("//img[@alt='image5.png']")
     end
   end
 end
