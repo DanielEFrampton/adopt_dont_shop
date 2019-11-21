@@ -11,7 +11,9 @@ RSpec.describe "pet show page", type: :feature do
                                      name: "Bill",
                                      approx_age: 3,
                                      sex: "male",
-                                     image_path: "image1.png"
+                                     image_path: "image1.png",
+                                     description: "Very canine",
+                                     adoptable: true
                                    })
     visit "/pets/#{@pet_1.id}"
   end
@@ -20,12 +22,12 @@ RSpec.describe "pet show page", type: :feature do
     expect(page).to have_content(@pet_1.name)
   end
 
-  xit "can display pet image" do
+  it "can display pet image" do
     expect(page).to have_xpath("//img[@src='#{@pet_1.image_path}']")
   end
 
-  xit "can display pet description" do
-    expect(page).to have_content("Description: #{@pet_1.name}")
+  it "can display pet description" do
+    expect(page).to have_content("Description: #{@pet_1.description}")
   end
 
   xit "can display approximate age of pet" do
