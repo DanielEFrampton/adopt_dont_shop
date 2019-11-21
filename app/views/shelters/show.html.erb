@@ -9,8 +9,8 @@ Zip: <%= @shelter.zip %><br/>
 </p>
 
 <p>
-<a href="/shelters/<%= @shelter.id %>/edit">Edit Shelter</a><br/>
-<a href="/shelters/<%= @shelter.id %>" data-method="DELETE">Delete Shelter</a><br/>
-<a href="/shelters">Return to Shelter Index</a>
-
+  <a href="/shelters/<%= @shelter.id %>/pets">All Pets at This Shelter</a><br/>
+  <a href="/shelters/<%= @shelter.id %>/edit">Edit Shelter</a><br/>
+  <a href="/shelters/<%= @shelter.id %>" data-method="DELETE">Delete Shelter</a><br/>
+  <a href="/shelters">Return to Shelter Index</a>
 </p>
