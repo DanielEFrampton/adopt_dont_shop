@@ -34,6 +34,8 @@ RSpec.describe 'In the Pet edit process', type: :feature do
 
   describe 'the Pet Edit page' do
     it 'has a form to edit pet data' do
+      visit "/pets/#{@pet_1.id}/edit"
+      
       expect(page).to have_selector('form')
       expect(page).to have_field('Name')
       expect(page).to have_field('Sex')
