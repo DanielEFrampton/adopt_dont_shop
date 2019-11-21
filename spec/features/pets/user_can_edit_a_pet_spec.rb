@@ -45,11 +45,13 @@ RSpec.describe 'In the Pet edit process', type: :feature do
     end
 
     it 'has submit button which when clicked sends PATCH request, updates pet, redirects to Pet Show page with updated data' do
-      fill_in 'name', with: 'Philippa'
-      fill_in 'approx_age', with: 67
-      fill_in 'sex', with: 'female'
-      fill_in 'description', with: "Somewhat cute"
-      fill_in 'image_path', with: "image5.png"
+      visit "/pets/#{@pet_1.id}/edit"
+
+      fill_in 'Name', with: 'Philippa'
+      fill_in 'Approximate Age', with: 67
+      fill_in 'Sex', with: 'female'
+      fill_in 'Description', with: "Somewhat cute"
+      fill_in 'Image Path', with: "https://cdn.pixabay.com/photo/2016/12/13/05/15/puppy-1903313_1280.jpg"
 
       click_button 'Submit'
 
@@ -59,7 +61,21 @@ RSpec.describe 'In the Pet edit process', type: :feature do
       expect(page).to have_content("Approximate Age: 67")
       expect(page).to have_content("Sex: female")
       expect(page).to have_content("Description: Somewhat cute")
-      expect(page).to have_xpath("//img[@alt='image5.png']")
+      expect(page).to have_xpath("//img[@alt='https://cdn.pixabay.com/photo/2016/12/13/05/15/puppy-1903313_1280.jpg']")
+    end
+
+    it "can update pet info when only some fields are modified and others remain intact" do
+      visit "/pets/#{@pet_1.id}/edit"
+      fill_in 'Name', with: 'Philippa'
+      click_button 'Submit'
+
+      expect(current_path).to eq("/pets/#{@pet_1.id}")
+      expect(page).to have_content("Philippa")
+      expect(page).to have_content("Adoptable: true")
+      expect(page).to have_content("Approximate Age: 3")
+      expect(page).to have_content("Sex: male")
+      expect(page).to have_content("Description: Very canine")
+      expect(page).to have_xpath("//img[@alt='image1.png']")
     end
   end
 end
