@@ -30,15 +30,15 @@ RSpec.describe "pet show page", type: :feature do
     expect(page).to have_content("Description: #{@pet_1.description}")
   end
 
-  xit "can display approximate age of pet" do
+  it "can display approximate age of pet" do
     expect(page).to have_content("Approximate Age: #{@pet_1.approx_age}")
   end
 
-  xit "can display gender of pet" do
+  it "can display gender of pet" do
     expect(page).to have_content("Sex: #{@pet_1.sex}")
   end
 
-  xit "can display adoptable status of pet" do
+  it "can display adoptable status of pet" do
     expect(page).to have_content("Adoptable: #{@pet_1.adoptable}")
   end
 end
