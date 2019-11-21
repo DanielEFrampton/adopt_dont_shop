@@ -2,11 +2,11 @@
 
 <h3><%= @pet.name %></h3>
 <p>
-  Adoptable: <%= @pet.adoptable %>
-  Description: <%= @pet.description %>
+  Adoptable: <%= @pet.adoptable %><br/>
+  Description: <%= @pet.description %><br/>
   Approximate Age: <%= @pet.approx_age %><br/>
   Sex: <%= @pet.sex %><br/>
-  <img src="<%= @pet.image_path %>" alt="<%= @pet.image_path %>">
+  <%= image_tag "#{@pet.image_path}", alt: "#{@pet.image_path}" %>
 </p>
 
 <p>

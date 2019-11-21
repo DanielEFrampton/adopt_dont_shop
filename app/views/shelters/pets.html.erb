@@ -5,7 +5,7 @@
   <p>
     Approximate Age: <%= pet.approx_age %><br/>
     Sex: <%= pet.sex %><br/>
-    <img src="<%= pet.image_path %>" alt="<%= pet.image_path %>">
+    <%= image_tag "#{pet.image_path}", alt: "#{pet.image_path}" %>
   </p>
 <% end %>
 
