@@ -11,6 +11,7 @@
 
 <p>
   <a href="/pets/<%= @pet.id %>/edit">Edit Pet Info</a><br/>
+  <%= link_to 'Delete Pet', "/pets/#{@pet.id}", method: :delete %>
   <a href="/shelters/<%= @pet.shelter.id %>">This Pet's Shelter</a><br/>
   <a href="/pets">All Pets Index</a><br/>
 </p>
