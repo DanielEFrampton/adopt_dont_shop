@@ -1,0 +1,13 @@
+<h1>Add Adoptable Pet</h1>
+
+<form action="/shelters/<%= @shelter.id %>/pets" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>"/>
+  Name: <input type="text" name="pet[name]"><br/>
+  Approximate Age: <input type="text" name="pet[approx_age]"><br/>
+  Sex:<br/>
+  <input type="radio" name="pet[sex]" value="male" checked> Male<br/>
+  <input type="radio" name="pet[sex]" value="female"> Female<br/>
+  Image Path: <input type="text" name="pet[image_path]"><br/>
+  Description: <input type="text" name="pet[description]"><br/>
+  <input type="submit" value="Submit"/>
+</form>

@@ -17,3 +17,24 @@
  img {
    width: 30%;
  }
+
+ h1 {
+   color: black;
+   font-family: "Lucida Sans Unicode", "Lucida Grande";
+   margin: 0px 0px 10px 0px;
+   padding: 10px;
+ }
+
+ body {
+   background-color: lightblue;
+   font-family: verdana;
+   font-size: 1.25em;
+ }
+
+ a {
+   color: black;
+ }
+
+ section {
+   background-color: cornsilk;
+ }
