@@ -24,8 +24,11 @@ RSpec.describe 'In the Pet edit process', type: :feature do
       expect(page).to have_link('Edit Pet Info')
     end
 
-    xit 'has link that takes user to Pet Edit page' do
+    it 'has link that takes user to Pet Edit page when clicked' do
+      visit "/pets/#{@pet_1.id}"
+      click_link('Edit Pet Info')
 
+      expect(current_path).to eq("/pets/#{@pet_1.id}/edit")
     end
   end
 
