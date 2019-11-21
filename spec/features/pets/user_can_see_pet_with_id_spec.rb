@@ -37,6 +37,6 @@ RSpec.describe "pet show page", type: :feature do
   end
 
   xit "can display adoptable status of pet" do
-    expect(page).to have_content("Adoptable Status: #{@pet_1.status}")
+    expect(page).to have_content("Adoptable: #{@pet_1.adoptable}")
   end
 end
