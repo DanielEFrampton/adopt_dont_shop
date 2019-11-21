@@ -1,7 +1,7 @@
 <h1>All Pets at <%= @shelter.name %></h1>
 
 <% @pets.each do |pet| %>
-  <h3><%= pet.name %></h3>
+  <h3><a href="/pets/<%= pet.id %>"><%= pet.name %></a></h3>
   <p>
     Approximate Age: <%= pet.approx_age %><br/>
     Sex: <%= pet.sex %><br/>
