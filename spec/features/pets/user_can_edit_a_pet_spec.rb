@@ -33,7 +33,13 @@ RSpec.describe 'In the Pet edit process', type: :feature do
   end
 
   describe 'the Pet Edit page' do
-    xit 'has a form to edit pet data' do
+    it 'has a form to edit pet data' do
+      expect(page).to have_selector('form')
+      expect(page).to have_field('Name')
+      expect(page).to have_field('Sex')
+      expect(page).to have_field('Approximate Age')
+      expect(page).to have_field('Description')
+      expect(page).to have_field('Image Path')
     end
 
     xit 'has submit button which when clicked sends PATCH request, updates pet, redirects to Pet Show page with updated data' do
