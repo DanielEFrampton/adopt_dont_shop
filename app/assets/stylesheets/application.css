@@ -17,3 +17,20 @@
  img {
    width: 30%;
  }
+
+ h1 {
+   background-color: darkblue;
+   color: lightgray;
+   margin: 0px 0px 10px 0px;
+   padding: 5px;
+ }
+
+ body {
+   background-color: lightgray;
+   font-family: verdana;
+   font-size: 1.25em;
+ }
+
+ a {
+   color: black;
+ }
