@@ -32,7 +32,6 @@ RSpec.describe "shelter pet creation process", type: :feature do
     visit "/shelters/#{@shelter_1.id}/pets/new"
 
     fill_in 'pet[name]', with: "Phil"
-    fill_in 'pet[sex]', with: "male"
     fill_in 'pet[approx_age]', with: 1
     fill_in 'pet[description]', with: "Very cute"
     fill_in 'pet[image_path]', with: "image4.png"
