@@ -4,6 +4,7 @@
   <section id="shelter-<%= shelter.id %>-section">
   <h3><a href="/shelters/<%= shelter.id %>"><%= shelter.name %></a></h3>
   <p><%= "Street Address: #{shelter.address}" %></p>
+  <%= link_to 'Edit Shelter', "/shelters/#{shelter.id}/edit" %>
   </section>
 <% end %>
 
