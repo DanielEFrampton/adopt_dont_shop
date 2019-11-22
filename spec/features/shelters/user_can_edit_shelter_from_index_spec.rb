@@ -19,4 +19,22 @@ RSpec.describe "shelter index page", type: :feature do
 
     expect(page).to have_link('Edit Shelter', count: 2)
   end
+
+  it "has links that navigates to shelter edit page for each individual shelter" do
+    visit '/shelters'
+
+    within "#shelter-#{@shelter_1.id}-section" do
+      click_link('Edit Shelter')
+    end
+
+    expect(current_path).to eq("/shelters/#{@shelter_1.id}/edit")
+
+    visit '/shelters'
+
+    within "#shelter-#{@shelter_2.id}-section" do
+      click_link('Edit Shelter')
+    end
+
+    expect(current_path).to eq("/shelters/#{@shelter_2.id}/edit")
+  end
 end
