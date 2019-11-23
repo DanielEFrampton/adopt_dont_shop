@@ -1,13 +1,20 @@
-<h1>All Shelters</h1>
+<h2>All Shelters</h2>
 
-<% @shelters.each do |shelter| %>
-  <section id="shelter-<%= shelter.id %>-section">
-  <h3><%= link_to "#{shelter.name}", "/shelters/#{shelter.id}" %></h3>
-  <p><%= "Street Address: #{shelter.address}" %></p>
-  <%= link_to 'Edit Shelter', "/shelters/#{shelter.id}/edit" %>
-  <%= link_to 'Delete Shelter', "/shelters/#{shelter.id}", method: :delete %>
+<main>
+  <% @shelters.each do |shelter| %>
+    <section id="shelter-<%= shelter.id %>-section">
+      <h3><%= link_to "#{shelter.name}", "/shelters/#{shelter.id}" %></h3>
+      <p>
+        <%= "Address: #{shelter.address}, #{shelter.city} #{shelter.state} #{shelter.zip}" %>
+      </p>
+      <navbar>
+        <%= link_to 'Edit Shelter', "/shelters/#{shelter.id}/edit" %>
+        <%= link_to 'Delete Shelter', "/shelters/#{shelter.id}", method: :delete %>
+      </navbar>
+    </section>
+  <% end %>
+</main>
 
-  </section>
-<% end %>
-
-<a href="shelters/new">Create New Shelter</a>
+<footer>
+  <a href="shelters/new">Create New Shelter</a>
+</footer>

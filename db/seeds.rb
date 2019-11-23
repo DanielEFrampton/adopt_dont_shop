@@ -19,7 +19,15 @@ Shelter.find(1).pets.create({
                                name: "Bill",
                                approx_age: 3,
                                sex: "male",
-                               image_path: "image1.png",
+                               image_path: "https://cdn.pixabay.com/photo/2016/12/13/05/15/puppy-1903313_1280.jpg",
+                               description: "Very canine",
+                               adoptable: true
+                             })
+Shelter.find(1).pets.create({
+                               name: "Phil",
+                               approx_age: 1,
+                               sex: "male",
+                               image_path: "https://boygeniusreport.files.wordpress.com/2016/11/puppy-dog.jpg",
                                description: "Very canine",
                                adoptable: true
                              })
@@ -27,7 +35,7 @@ Shelter.find(2).pets.create({
                                name: "Jill",
                                approx_age: 5,
                                sex: "female",
-                               image_path: "image2.png",
+                               image_path: "http://files.alfresco.mjh.group/alfresco_images/DVM360//2019/02/27/c23624de-1b4c-4e61-961f-db10dcf27341/veterinary-black-puppy-licking-wood-AdobeStock_211167675-450.jpg",
                                description: "Very canine",
                                adoptable: true
                              })
@@ -35,7 +43,7 @@ Shelter.find(2).pets.create({
                                name: "Will",
                                approx_age: 2,
                                sex: "male",
-                               image_path: "image3.png",
+                               image_path: "https://image.cnbcfm.com/api/v1/image/105992231-1561667465295gettyimages-521697453.jpeg",
                                description: "Very canine",
                                adoptable: true
                              })
