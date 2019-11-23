@@ -1,4 +1,4 @@
-<h1>All Pets at <%= @shelter.name %></h1>
+<h1>All Pets at <%= link_to "#{@shelter.name}", "/shelters/#{@shelter.id}" %></h1>
 
 <% @pets.each do |pet| %>
   <section id="pet-<%= pet.id %>-section">
