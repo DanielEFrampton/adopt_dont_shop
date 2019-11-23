@@ -1,6 +1,6 @@
 <h1>Pet Info</h1>
 
-<h3><%= @pet.name %></h3>
+<h3><%= link_to "#{@pet.name}", "/pets/#{@pet.id}" %></h3>
 <p>
   Adoptable: <%= @pet.adoptable %><br/>
   Description: <%= @pet.description %><br/>
