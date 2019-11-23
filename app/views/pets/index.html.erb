@@ -11,6 +11,7 @@
     </p>
     <p>
       <%= link_to 'Edit Pet Info', "/pets/#{pet.id}/edit" %><br/>
+      <%= link_to 'Delete Pet', "/pets/#{pet.id}", method: :delete %><br/>
     </p>
   </section>
 <% end %>
