@@ -1,4 +1,4 @@
-<h2>All Pets at <%= link_to "#{@shelter.name}", "/shelters/#{@shelter.id}" %></h2>
+<h2>All Pets at <%= link_to "#{@shelter.name}", "/shelters/#{@shelter.id}" %><%= "(#{@pets.count} Pet#{"s" if @pets.count != 1})" %></h2>
 
 <main>
   <% @pets.each do |pet| %>
