@@ -58,6 +58,8 @@ RSpec.describe "pets index page", type: :feature do
 
     expect(current_path).to eq("/pets/#{@pet_2.id}/edit")
 
+    visit '/pets'
+
     within "#pet-#{@pet_3.id}-section" do
       click_link('Edit Pet Info')
     end
