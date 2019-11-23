@@ -1,17 +1,20 @@
-<h1>Pet Info</h1>
+<h2>Pet Info</h2>
 
-<h3><%= link_to "#{@pet.name}", "/pets/#{@pet.id}" %></h3>
-<p>
-  Adoptable: <%= @pet.adoptable %><br/>
-  Description: <%= @pet.description %><br/>
-  Approximate Age: <%= @pet.approx_age %><br/>
-  Sex: <%= @pet.sex %><br/>
-  <%= image_tag "#{@pet.image_path}", alt: "#{@pet.image_path}" %>
-</p>
+<main>
+  <section>
+    <h3><%= link_to "#{@pet.name}", "/pets/#{@pet.id}" %></h3>
+    <p>
+      Adoptable: <%= @pet.adoptable %><br/>
+      Description: <%= @pet.description %><br/>
+      Approximate Age: <%= @pet.approx_age %><br/>
+      Sex: <%= @pet.sex %><br/>
+      <%= image_tag "#{@pet.image_path}", alt: "#{@pet.image_path}" %>
+    </p>
+  </section>
+</main>
 
-<p>
-  <a href="/pets/<%= @pet.id %>/edit">Edit Pet Info</a><br/>
+<footer>
+  <a href="/pets/<%= @pet.id %>/edit">Edit Pet Info</a>
   <%= link_to 'Delete Pet', "/pets/#{@pet.id}", method: :delete %>
-  <a href="/shelters/<%= @pet.shelter.id %>">This Pet's Shelter</a><br/>
-  <a href="/pets">All Pets Index</a><br/>
-</p>
+  <a href="/shelters/<%= @pet.shelter.id %>">This Pet's Shelter</a>
+</footer>
