@@ -18,21 +18,21 @@ RSpec.describe "shelter creation page", type: :feature do
     visit "/shelters/new"
 
     expect(page).to have_selector('form')
-    expect(page).to have_field('shelter[name]')
-    expect(page).to have_field('shelter[address]')
-    expect(page).to have_field('shelter[city]')
-    expect(page).to have_field('shelter[state]')
-    expect(page).to have_field('shelter[zip]')
+    expect(page).to have_field('Name')
+    expect(page).to have_field('Address')
+    expect(page).to have_field('City')
+    expect(page).to have_field('State')
+    expect(page).to have_field('Zip')
   end
 
   it "can send POST request to '/shelters', a new shelter is created, be redirected to Shelter Index page where it can see the new Shelter listed" do
     visit 'shelters/new'
-    
-    fill_in 'shelter[name]', with: "Ridiculous Test Name 2"
-    fill_in 'shelter[address]', with: "125 Fake Ln."
-    fill_in 'shelter[city]', with: "Faketown"
-    fill_in 'shelter[state]', with: "FK"
-    fill_in 'shelter[zip]', with: "55555"
+
+    fill_in 'Name', with: "Ridiculous Test Name 2"
+    fill_in 'Address', with: "125 Fake Ln."
+    fill_in 'City', with: "Faketown"
+    fill_in 'State', with: "FK"
+    fill_in 'Zip', with: "55555"
 
     click_button 'Submit'
 

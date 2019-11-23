@@ -27,17 +27,17 @@ RSpec.describe "shelter update process", type: :feature do
     visit '/shelters/1/edit'
 
     expect(page).to have_selector('form')
-    expect(page).to have_field('shelter[name]', with: @shelter_1.name)
-    expect(page).to have_field('shelter[address]', with: @shelter_1.address)
-    expect(page).to have_field('shelter[city]', with: @shelter_1.city)
-    expect(page).to have_field('shelter[state]', with: @shelter_1.state)
-    expect(page).to have_field('shelter[zip]', with: @shelter_1.zip)
+    expect(page).to have_field('Name', with: @shelter_1.name)
+    expect(page).to have_field('Address', with: @shelter_1.address)
+    expect(page).to have_field('City', with: @shelter_1.city)
+    expect(page).to have_field('State', with: @shelter_1.state)
+    expect(page).to have_field('Zip', with: @shelter_1.zip)
   end
 
   it "can send patch request, update shelter, and redirect to shelters index with updated info" do
     visit '/shelters/1/edit'
 
-    fill_in 'shelter[name]', with: "More Elegant Test Name"
+    fill_in 'Name', with: "More Elegant Test Name"
     click_button 'Submit'
 
     expect(current_path).to eq('/shelters/1')

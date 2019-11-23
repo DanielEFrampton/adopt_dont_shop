@@ -21,20 +21,21 @@ RSpec.describe "shelter pet creation process", type: :feature do
 
     expect(current_path).to eq("/shelters/#{@shelter_1.id}/pets/new")
     expect(page).to have_selector('form')
-    expect(page).to have_field('pet[name]')
-    expect(page).to have_field('pet[sex]')
-    expect(page).to have_field('pet[approx_age]')
-    expect(page).to have_field('pet[description]')
-    expect(page).to have_field('pet[image_path]')
+    expect(page).to have_field('Name')
+    expect(page).to have_field('Sex')
+    expect(page).to have_field('Approximate Age')
+    expect(page).to have_field('Description')
+    expect(page).to have_field('Image Path')
   end
 
   it "can create new adoptable pet and redirect user to updated shelter pet index" do
     visit "/shelters/#{@shelter_1.id}/pets/new"
 
-    fill_in 'pet[name]', with: "Phil"
-    fill_in 'pet[approx_age]', with: 1
-    fill_in 'pet[description]', with: "Very cute"
-    fill_in 'pet[image_path]', with: "image4.png"
+    fill_in 'Name', with: "Phil"
+    fill_in 'Sex', with: "male"
+    fill_in 'Approximate Age', with: "1"
+    fill_in 'Description', with: "Very cute"
+    fill_in 'Image Path', with: "image4.png"
 
     click_button 'Submit'
 
