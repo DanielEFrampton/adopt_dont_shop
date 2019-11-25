@@ -11,7 +11,7 @@ RSpec.describe 'In the Pet edit process', type: :feature do
                                      name: "Bill",
                                      approx_age: 3,
                                      sex: "male",
-                                     image_path: "image1.png",
+                                     image_path: "https://www.petmd.com/sites/default/files/Acute-Dog-Diarrhea-47066074.jpg",
                                      description: "Very canine",
                                      adoptable: true
                                    })
@@ -75,7 +75,7 @@ RSpec.describe 'In the Pet edit process', type: :feature do
       expect(page).to have_content("Approximate Age: 3")
       expect(page).to have_content("Sex: male")
       expect(page).to have_content("Description: Very canine")
-      expect(page).to have_xpath("//img[@alt='image1.png']")
+      expect(page).to have_xpath("//img[@alt='https://www.petmd.com/sites/default/files/Acute-Dog-Diarrhea-47066074.jpg']")
     end
   end
 end

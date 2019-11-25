@@ -11,7 +11,7 @@ RSpec.describe "pet show page", type: :feature do
                                      name: "Bill",
                                      approx_age: 3,
                                      sex: "male",
-                                     image_path: "image1.png",
+                                     image_path: "https://www.petmd.com/sites/default/files/Acute-Dog-Diarrhea-47066074.jpg",
                                      description: "Very canine",
                                      adoptable: true
                                    })

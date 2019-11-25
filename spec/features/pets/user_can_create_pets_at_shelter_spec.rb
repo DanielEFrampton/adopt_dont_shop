@@ -35,7 +35,7 @@ RSpec.describe "shelter pet creation process", type: :feature do
     fill_in 'Sex', with: "male"
     fill_in 'Approximate Age', with: "1"
     fill_in 'Description', with: "Very cute"
-    fill_in 'Image Path', with: "image4.png"
+    fill_in 'Image Path', with: "http://files.alfresco.mjh.group/alfresco_images/DVM360//2019/02/27/c23624de-1b4c-4e61-961f-db10dcf27341/veterinary-black-puppy-licking-wood-AdobeStock_211167675-450.jpg"
 
     click_button 'Submit'
 
@@ -43,6 +43,6 @@ RSpec.describe "shelter pet creation process", type: :feature do
     expect(page).to have_content("Phil")
     expect(page).to have_content("Approximate Age: 1")
     expect(page).to have_content("Sex: male")
-    expect(page).to have_xpath("//img[@alt='image4.png']")
+    expect(page).to have_xpath("//img[@alt='http://files.alfresco.mjh.group/alfresco_images/DVM360//2019/02/27/c23624de-1b4c-4e61-961f-db10dcf27341/veterinary-black-puppy-licking-wood-AdobeStock_211167675-450.jpg']")
   end
 end

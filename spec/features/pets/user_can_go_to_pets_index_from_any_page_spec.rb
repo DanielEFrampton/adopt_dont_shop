@@ -16,7 +16,7 @@ RSpec.describe "pets index navbar link", type: :feature do
                                     name: "Bill",
                                     approx_age: 3,
                                     sex: "male",
-                                    image_path: "image1.png",
+                                    image_path: "https://www.petmd.com/sites/default/files/Acute-Dog-Diarrhea-47066074.jpg",
                                     description: "Very canine",
                                     adoptable: true
                                   })
@@ -24,7 +24,7 @@ RSpec.describe "pets index navbar link", type: :feature do
                                     name: "Jill",
                                     approx_age: 5,
                                     sex: "female",
-                                    image_path: "image2.png",
+                                    image_path: "https://cdn.pixabay.com/photo/2016/12/13/05/15/puppy-1903313_1280.jpg",
                                     description: "Very canine",
                                     adoptable: true
                                   })
@@ -32,7 +32,7 @@ RSpec.describe "pets index navbar link", type: :feature do
                                     name: "Will",
                                     approx_age: 2,
                                     sex: "male",
-                                    image_path: "image3.png",
+                                    image_path: "https://boygeniusreport.files.wordpress.com/2016/11/puppy-dog.jpg",
                                     description: "Very canine",
                                     adoptable: true
                                   })
