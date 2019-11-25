@@ -50,11 +50,11 @@ RSpec.describe 'As a visitor', type: :feature do
     it 'I see adoptable pets listed before pending pets' do
       visit "/shelters/#{@shelter_2.id}/pets"
 
-      page.body.index("Will").should < page.body.index("Jill")
+      expect(page.body.index("Will")).to be < page.body.index("Jill")
 
       visit "/shelters/#{@shelter_1.id}/pets"
 
-      page.body.index("Phil").should < page.body.index("Bill")
+      expect(page.body.index("Phil")).to be < page.body.index("Bill")
     end
   end
 
@@ -62,10 +62,10 @@ RSpec.describe 'As a visitor', type: :feature do
     it 'I see adoptable pets listed before pending pets' do
       visit '/pets'
 
-      page.body.index("Will").should < page.body.index("Jill")
-      page.body.index("Phil").should < page.body.index("Bill")
-      page.body.index("Phil").should < page.body.index("Will")
-      page.body.index("Bill").should < page.body.index("Jill")
+      expect(page.body.index("Will")).to be < page.body.index("Jill")
+      expect(page.body.index("Phil")).to be < page.body.index("Bill")
+      expect(page.body.index("Phil")).to be < page.body.index("Will")
+      expect(page.body.index("Bill")).to be < page.body.index("Jill")
     end
   end
 end
