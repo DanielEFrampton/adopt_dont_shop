@@ -46,6 +46,6 @@ class SheltersController < ApplicationController
 
   def pets
     @shelter = Shelter.find(params[:id])
-    @pets = @shelter.pets.all
+    @pets = @shelter.pets.order(adoptable: :desc)
   end
 end

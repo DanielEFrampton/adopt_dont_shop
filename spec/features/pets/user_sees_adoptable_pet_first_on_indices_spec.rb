@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "shelter pet index link", type: :feature do
+RSpec.describe 'As a visitor', type: :feature do
   before(:each) do
     @shelter_1 = Shelter.create(name: "Ridiculous Test Name",
                                address: "124 Fake Ln.",
@@ -12,23 +12,31 @@ RSpec.describe "shelter pet index link", type: :feature do
                                city: "Faketown",
                                state: "FK",
                                zip: "55555")
-    @pet_1 = @shelter_1.pets.create({
+    @pet_1 = @shelter_1.pets.create!({
                                     name: "Bill",
                                     approx_age: 3,
                                     sex: "male",
                                     image_path: "https://www.petmd.com/sites/default/files/Acute-Dog-Diarrhea-47066074.jpg",
                                     description: "Very canine",
+                                    adoptable: false
+                                  })
+    @pet_2 = @shelter_1.pets.create({
+                                    name: "Phil",
+                                    approx_age: 5,
+                                    sex: "male",
+                                    image_path: "https://www.petmd.com/sites/default/files/Acute-Dog-Diarrhea-47066074.jpg",
+                                    description: "Very canine",
                                     adoptable: true
                                   })
-    @pet_2 = @shelter_2.pets.create({
+    @pet_3 = @shelter_2.pets.create!({
                                     name: "Jill",
                                     approx_age: 5,
                                     sex: "female",
                                     image_path: "https://cdn.pixabay.com/photo/2016/12/13/05/15/puppy-1903313_1280.jpg",
                                     description: "Very canine",
-                                    adoptable: true
+                                    adoptable: false
                                   })
-    @pet_3 = @shelter_2.pets.create({
+    @pet_4 = @shelter_2.pets.create({
                                     name: "Will",
                                     approx_age: 2,
                                     sex: "male",
@@ -38,17 +46,26 @@ RSpec.describe "shelter pet index link", type: :feature do
                                   })
   end
 
-  it "exists on shelter show page and when clicked takes user to shelter pets index" do
-    visit "/shelters/#{@shelter_1.id}"
+  describe 'when I visit a shelter pets index' do
+    it 'I see adoptable pets listed before pending pets' do
+      visit "/shelters/#{@shelter_2.id}/pets"
 
-    click_link('All Pets at This Shelter')
+      expect(page.body.index("Will")).to be < page.body.index("Jill")
 
-    expect(current_path).to eq("/shelters/#{@shelter_1.id}/pets")
+      visit "/shelters/#{@shelter_1.id}/pets"
 
-    visit "/shelters/#{@shelter_2.id}"
+      expect(page.body.index("Phil")).to be < page.body.index("Bill")
+    end
+  end
 
-    click_link('All Pets at This Shelter')
+  describe 'when I visit a pets index' do
+    it 'I see adoptable pets listed before pending pets' do
+      visit '/pets'
 
-    expect(current_path).to eq("/shelters/#{@shelter_2.id}/pets")
+      expect(page.body.index("Will")).to be < page.body.index("Jill")
+      expect(page.body.index("Phil")).to be < page.body.index("Bill")
+      expect(page.body.index("Phil")).to be < page.body.index("Will")
+      expect(page.body.index("Bill")).to be < page.body.index("Jill")
+    end
   end
 end
