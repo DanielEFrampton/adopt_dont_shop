@@ -50,4 +50,14 @@ class PetsController < ApplicationController
     Pet.destroy(params[:id])
     redirect_to '/pets'
   end
+
+  def update_status
+    pet = Pet.find(params[:id])
+    pet.update({
+                adoptable: params[:new_status] == "adoptable" ? true : false
+              })
+    pet.save
+
+    redirect_to "/pets/#{pet.id}"
+  end
 end
