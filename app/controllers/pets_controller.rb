@@ -1,6 +1,10 @@
 class PetsController < ApplicationController
   def index
-    @pets = Pet.order(adoptable: :desc)
+    if params[:adoptable] != nil
+      @pets = Pet.where(adoptable: params[:adoptable])
+    else
+      @pets = Pet.order(adoptable: :desc)
+    end
   end
 
   def show

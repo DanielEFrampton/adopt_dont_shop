@@ -46,6 +46,10 @@ class SheltersController < ApplicationController
 
   def pets
     @shelter = Shelter.find(params[:id])
-    @pets = @shelter.pets.order(adoptable: :desc)
+    if params[:adoptable] != nil
+      @pets = @shelter.pets.where(adoptable: params[:adoptable])
+    else
+      @pets = @shelter.pets.order(adoptable: :desc)
+    end
   end
 end
