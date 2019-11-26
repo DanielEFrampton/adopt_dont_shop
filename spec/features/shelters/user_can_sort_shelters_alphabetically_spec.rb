@@ -92,7 +92,7 @@ RSpec.describe 'As a visitor', type: :feature do
       expect(current_path).to eq('/shelters')
       expect(page.body.index(@shelter_2.name)).to be < page.body.index(@shelter_1.name)
       expect(page.body.index(@shelter_2.name)).to be < page.body.index(@shelter_3.name)
-      expect(page.body.index(@shelter_1.name)).to be > page.body.index(@shelter_3.name)
+      expect(page.body.index(@shelter_1.name)).to be < page.body.index(@shelter_3.name)
     end
   end
 end
