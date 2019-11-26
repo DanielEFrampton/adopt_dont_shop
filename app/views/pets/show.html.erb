@@ -16,5 +16,6 @@
 <footer>
   <a href="/pets/<%= @pet.id %>/edit">Edit Pet Info</a>
   <%= link_to 'Delete Pet', "/pets/#{@pet.id}", method: :delete %>
+  <%= link_to *@pet.adoptable_link_args %>
   <a href="/shelters/<%= @pet.shelter.id %>">This Pet's Shelter</a>
 </footer>
