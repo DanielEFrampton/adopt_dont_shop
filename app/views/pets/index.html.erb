@@ -17,3 +17,8 @@
     </section>
   <% end %>
 </main>
+
+<footer>
+  <%= link_to 'Show Only Adoptable Pets', '/pets?adoptable=true' %>
+  <%= link_to 'Show Only Adoption-Pending Pets', '/pets?adoptable=false' %>
+</footer>
