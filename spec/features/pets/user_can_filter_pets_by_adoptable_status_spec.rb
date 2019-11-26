@@ -66,25 +66,25 @@ RSpec.describe 'As a visitor', type: :feature do
 
       click_link('Show Only Adoptable Pets')
 
-      expect(current_path).to eq('/pets?adoptable=true')
+      assert_current_path('/pets?adoptable=true')
 
       visit '/pets'
 
       click_link('Show Only Adoption-Pending Pets')
 
-      expect(current_path).to eq('/pets?adoptable=false')
+      assert_current_path('/pets?adoptable=false')
 
       visit "/shelters/#{@shelter_1.id}/pets"
 
       click_link('Show Only Adoptable Pets')
 
-      expect(current_path).to eq("/shelters/#{@shelter_1.id}/pets?adoptable=true")
+      assert_current_path("/shelters/#{@shelter_1.id}/pets?adoptable=true")
 
       visit "/shelters/#{@shelter_1.id}/pets"
 
       click_link('Show Only Adoption-Pending Pets')
 
-      expect(current_path).to eq("/shelters/#{@shelter_1.id}/pets?adoptable=false")
+      assert_current_path("/shelters/#{@shelter_1.id}/pets?adoptable=false")
     end
 
     it "And I see only the pets that are adoptable/pending adoption (respectively)" do
