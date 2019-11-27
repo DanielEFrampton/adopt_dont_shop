@@ -1,4 +1,16 @@
-<h2>All Shelters</h2>
+<header id="page-header">
+  <h2>Shelter Index</h2>
+  <navbar>
+    <span id="crud-links">
+      <%= link_to 'Create New Shelter', "shelters/new" %>
+    </span>
+    <span id="sort-links">
+    <%= link_to 'Sort By Order Created', '/shelters', class: "#{@created_order}" %>
+    <%= link_to 'Sort Alphabetically', '/shelters?sort_by=alphabet', class: "#{@alphabet_order}" %>
+    <%= link_to "Sort By Number of Adoptable Pets", '/shelters?sort_by=adoptable', class: "#{@adoptable_order}" %>
+    </span>
+  </navbar>
+</header>
 
 <main>
   <% @shelters.each do |shelter| %>
@@ -8,15 +20,10 @@
         <%= "Address: #{shelter.address}, #{shelter.city} #{shelter.state} #{shelter.zip}" %>
       </p>
       <navbar>
+        <%= link_to 'Pets at This Shelter', "/shelters/#{shelter.id}/pets" %>
         <%= link_to 'Edit Shelter', "/shelters/#{shelter.id}/edit" %>
         <%= link_to 'Delete Shelter', "/shelters/#{shelter.id}", method: :delete %>
       </navbar>
     </section>
   <% end %>
 </main>
-
-<footer>
-  <a href="shelters/new">Create New Shelter</a>
-  <%= link_to 'Sort Alphabetically', '/shelters?sort_by=alphabet' %>
-  <%= link_to "Sort By Number of Adoptable Pets", '/shelters?sort_by=adoptable' %>
-</footer>

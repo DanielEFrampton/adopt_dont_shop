@@ -1,4 +1,12 @@
-<h2>Pet Info</h2>
+<header id="page-header">
+  <h2>Pet Info</h2>
+  <navbar>
+    <%= link_to 'Edit Pet Info', "/pets/#{@pet.id}/edit" %>
+    <%= link_to 'Delete Pet', "/pets/#{@pet.id}", method: :delete %>
+    <%= link_to *@pet.adoptable_link_args %>
+    <%= link_to "This Pet's Shelter", "/shelters/#{@pet.shelter.id}" %>
+  </navbar>
+</header>
 
 <main>
   <section>
@@ -12,10 +20,3 @@
     </p>
   </section>
 </main>
-
-<footer>
-  <a href="/pets/<%= @pet.id %>/edit">Edit Pet Info</a>
-  <%= link_to 'Delete Pet', "/pets/#{@pet.id}", method: :delete %>
-  <%= link_to *@pet.adoptable_link_args %>
-  <a href="/shelters/<%= @pet.shelter.id %>">This Pet's Shelter</a>
-</footer>

@@ -1,4 +1,11 @@
-<h2>All Pets</h2>
+<header id="page-header">
+  <h2>Pets Index</h2>
+  <navbar>
+    <%= link_to 'Show All Pets', '/pets', class: "#{@all_pets}" %>
+    <%= link_to 'Show Only Adoptable Pets', '/pets?adoptable=true', class: "#{@adoptable_pets}" %>
+    <%= link_to 'Show Only Adoption-Pending Pets', '/pets?adoptable=false', class: "#{@pending_pets}" %>
+  </navbar>
+</header>
 
 <main>
   <% @pets.each do |pet| %>
@@ -17,8 +24,3 @@
     </section>
   <% end %>
 </main>
-
-<footer>
-  <%= link_to 'Show Only Adoptable Pets', '/pets?adoptable=true' %>
-  <%= link_to 'Show Only Adoption-Pending Pets', '/pets?adoptable=false' %>
-</footer>
