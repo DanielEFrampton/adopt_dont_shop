@@ -1,9 +1,14 @@
 class PetsController < ApplicationController
   def index
-    if params[:adoptable] != nil
+    if params[:adoptable] == "true"
       @pets = Pet.where(adoptable: params[:adoptable])
+      @adoptable_pets = "active_sort"
+    elsif params[:adoptable] == "false"
+      @pets = Pet.where(adoptable: params[:adoptable])
+      @pending_pets = "active_sort"
     else
       @pets = Pet.order(adoptable: :desc)
+      @all_pets = "active_sort"
     end
   end
 

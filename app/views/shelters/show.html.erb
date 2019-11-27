@@ -1,4 +1,11 @@
-<h2>Shelter Info</h2>
+<header id="page-header">
+  <h2>Shelter Info</h2>
+  <navbar>
+    <%= link_to 'All Pets at This Shelter', "/shelters/#{@shelter.id}/pets" %>
+    <%= link_to 'Edit Shelter', "/shelters/#{@shelter.id}/edit" %>
+    <%= link_to 'Delete Shelter', "/shelters/#{@shelter.id}", method: :delete %>
+  </navbar>
+</header>
 
 <main>
   <section>
@@ -11,9 +18,3 @@
     </p>
   </section>
 </main>
-
-<footer>
-  <a href="/shelters/<%= @shelter.id %>/pets">All Pets at This Shelter</a>
-  <a href="/shelters/<%= @shelter.id %>/edit">Edit Shelter</a>
-  <a href="/shelters/<%= @shelter.id %>" data-method="DELETE">Delete Shelter</a>
-</footer>

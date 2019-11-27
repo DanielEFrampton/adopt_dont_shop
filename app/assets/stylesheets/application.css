@@ -14,49 +14,51 @@
  *= require_self
  */
 
+ body {
+   background-color: lightblue;
+   font-family: verdana;
+   font-size: 1em;
+   margin: 0px;
+ }
 
- #top {
+ header {
    display: flex;
    flex-direction: row;
    align-items: center;
    justify-content: space-between;
    background-color: white;
-   border-radius: 10px;
  }
 
- header h1 {
-   color: black;
-   font-family: "Lucida Sans Unicode", "Lucida Grande";
-   margin: 0px 0px 10px 0px;
+ #site-header {
+   border-bottom-style: solid;
+   border-bottom-width: 2px;
+   border-bottom-color: lightgray;
+ }
+
+ #page-header {
+   background-color: cornsilk;
+   margin-bottom: 1em;
+ }
+
+ header h1, h2 {
+   margin: 0px;
    padding: 10px;
  }
 
- #top navbar {
+ navbar {
    margin-right: 10px;
  }
 
- #top navbar a {
+ navbar a {
    margin: 10px;
  }
 
- body {
-   background-color: lightblue;
-   font-family: verdana;
-   font-size: 1.25em;
- }
-
- h2, h3 {
+ h1, h2, h3 {
    font-family: "Lucida Sans Unicode", "Lucida Grande";
  }
 
  a {
    color: black;
- }
-
- img {
-   width: 95%;
-   height: 300px;
-   object-fit: cover;
  }
 
  main {
@@ -75,8 +77,18 @@
    width: 100%;
  }
 
+ section a {
+   margin-left: 0px;
+ }
+
  section * {
    margin: 5px;
+ }
+
+ img {
+   width: 95%;
+   height: 300px;
+   object-fit: cover;
  }
 
  section navbar {
@@ -84,8 +96,10 @@
    flex-direction: row;
    align-items: center;
    justify-content: space-around;
-   border-top-style: solid;
-   border-width: 1px;
+   background-color: white;
+   border-radius: 5px;
+   margin-top: 10px;
+   border: 1px solid lightgray;
  }
 
  section img {
@@ -104,13 +118,19 @@
    width: 45%;
  }
 
- footer {
-   margin-top: 10px;
-   padding: 5px;
+ #crud-links {
+   border-right-style: solid;
+   border-right-color: black;
+   border-right-width: 1px;
+ }
+
+ .active_sort {
+   font-weight: bold;
+ }
+
+ #home-quote {
    display: flex;
-   flex-direction: row;
-   align-items: center;
-   justify-content: space-around;
-   background-color: white;
-   border-radius: 10px;
+   flex-direction: column;
+   justify-content: center;
+   text-indent: 2em;
  }

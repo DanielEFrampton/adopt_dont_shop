@@ -2,10 +2,13 @@ class SheltersController < ApplicationController
   def index
     if params[:sort_by] == "adoptable"
       @shelters = Shelter.all.sort_by {|shelter| shelter.pets.where(adoptable: true).count}.reverse
+      @adoptable_order = "active_sort"
     elsif params[:sort_by] == "alphabet"
       @shelters = Shelter.order(:name)
+      @alphabet_order = "active_sort"
     else
       @shelters = Shelter.all
+      @created_order = "active_sort"
     end
   end
 
@@ -52,10 +55,15 @@ class SheltersController < ApplicationController
 
   def pets
     @shelter = Shelter.find(params[:id])
-    if params[:adoptable] != nil
+    if params[:adoptable] == "true"
       @pets = @shelter.pets.where(adoptable: params[:adoptable])
+      @show_adoptable = "active_sort"
+    elsif params[:adoptable] == "false"
+      @pets = @shelter.pets.where(adoptable: params[:adoptable])
+      @show_pending = "active_sort"
     else
       @pets = @shelter.pets.order(adoptable: :desc)
+      @show_all = "active_sort"
     end
   end
 end
