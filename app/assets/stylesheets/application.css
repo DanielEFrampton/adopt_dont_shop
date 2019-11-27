@@ -127,3 +127,10 @@
  .active_sort {
    font-weight: bold;
  }
+
+ #home-quote {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   text-indent: 2em;
+ }
