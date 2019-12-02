@@ -1,5 +1,9 @@
 <header id="page-header">
-  <h2>All Pets at <%= link_to "#{@shelter.name}", "/shelters/#{@shelter.id}" %> <%= @shelter.pet_count_label%></h2>
+  <h2>
+    All Pets at
+    <%= link_to "#{@shelter.name}", "/shelters/#{@shelter.id}" %>
+    <%= "(#{@shelter.pet_count} Pet#{"s" if @shelter.pet_count != 1})" %>
+  </h2>
   <navbar>
     <span id="crud-links">
       <%= link_to 'Add Adoptable Pet', "/shelters/#{@shelter.id}/pets/new" %>
